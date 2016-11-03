@@ -1,0 +1,51 @@
+<!doctype html>
+
+
+
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title></title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 85%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+
+      }
+      .menu_button{
+        font-size: 85%;
+        padding: 3px 6px;
+      }
+      br {
+        line-height: 0px;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <!-- <div class="menu" id="Save">Save</div>
+    <div class="menu" id="Open">Open</div> -->
+    <form><p id = "textTitle">File Name: </p><input type = "text" id = "userInput"></form>
+    <button type="button" class="menu_button" id="save">Save</button>
+    <button type="button" class="menu_button" id="open">Open</button>
+    <button type="button" class="menu_button" id="delete">Delete</button>
+    <button type="button" class="menu_button" id="clear">Clear All</button>
+      <ul id = "list" style="list-style: none"></ul>
+    <div id="status"></div>
+  </body>
+</html>
